@@ -88,10 +88,7 @@ main,
   animation: x 250ms ease-out both;
 }
 
-.panel:not(.is-expanded):hover {
-  color: #e26d5c;
-  transform: scale(1.25);
-}
+
 
 
 .me {
@@ -110,34 +107,37 @@ main,
   background-color: #a2a77f;
 }
 
-.panel.expandable:hover {
-  color: inherit;
-}
+@media(hover:hover) and (pointer: fine) {
+  /* check for pointer as well to prevent overzealous mobile browsers */
 
-.panel.expandable a:hover {
-  transition: ease-in-out .25s;
-  color: #e26d5c;
-  transform: scale(1.25);
-}
+  .panel:not(.is-expanded):hover {
+    color: #e26d5c;
+    transform: scale(1.25);
+  }
 
-.expandable>:not(h2) {
-  display: inherit;
-}
+  .panel.expandable:hover {
+    color: inherit;
+  }
 
-@media(hover:hover) {
+  .panel.expandable a:hover {
+    transition: ease-in-out .25s;
+    color: #e26d5c;
+    transform: scale(1.25);
+  }
+
   body {
     /*The transform goes below the "bottom" of the page otherwise*/
     overflow: hidden;
   }
 
-  .expandable>:not(h2) {
-    display: none;
-  }
+}
 
-  .expandable.is-hovered>:not(h2) {
-    display: inherit;
-  }
+.expandable>:not(h2) {
+  display: none;
+}
 
+.expandable.is-hovered>:not(h2) {
+  display: inherit;
 }
 
 .expandable div {
@@ -223,6 +223,6 @@ main,
   }
 
   .panel-more img {
-    float:left;
+    float: left;
   }
 }

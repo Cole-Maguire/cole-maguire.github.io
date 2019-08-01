@@ -1,5 +1,11 @@
 function setExpandableHover() {
-  document.querySelectorAll(".expandable").forEach(div => {
+  let selector = "";
+  if (window.matchMedia('(hover:hover) and (pointer: fine)').matches) {
+    selector = ".expandable"
+  } else {
+    selector = ".other"
+  }
+  document.querySelectorAll(selector).forEach(div => {
     div.addEventListener('mouseover', () => {
       div.classList.add('is-hovered');
     });
