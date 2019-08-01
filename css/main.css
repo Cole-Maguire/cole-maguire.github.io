@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css?family=Patua+One&display=swap');
+
+@keyframes x {
+  from {
+    transform: translateY(100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr 5fr;
+  color: white;
+  font-family: 'Patua One', sans-serif;
+}
+
+:link {
+  color: inherit;
+  text-decoration: none;
+}
+
+:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+header {
+  padding: 20px;
+  background-color: #2a3d45;
+  color: #dce0d9;
+  border-bottom: #dce0d9 solid 5px;
+  z-index: 1;
+}
+
+header h1 {
+  margin: 0px;
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+
+#name-highlight {
+  color: #e26d5c;
+}
+
+main>* {
+  height: 100%;
+}
+
+div#main-panels {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: stretch;
+}
+
+.panel {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  flex: 1 0 250px;
+  align-items: center;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: ease-in-out .25s;
+}
+
+.panel.is-expanded {
+  flex-direction: row;
+  justify-content: space-between
+}
+
+main,
+#main-panels,
+.pop-up {
+  transition: ease-in-out .25s;
+  animation: x 250ms ease-out both;
+}
+
+.panel:not(.is-expanded):hover {
+  color: #e26d5c;
+  transform: scale(1.25);
+}
+
+
+.me {
+  background-color: #99d17b;
+}
+
+.github {
+  background-color: #2e294e;
+}
+
+.cv {
+  background-color: #1b998b;
+}
+
+.other {
+  background-color: #a2a77f;
+}
+
+.panel.expandable:hover {
+  color: inherit;
+}
+
+.panel.expandable>*:hover {
+  transition: ease-in-out .25s;
+  color: #e26d5c;
+  transform: scale(1.25);
+}
+
+.expandable>:not(h2) {
+  display: inherit;
+} 
+
+@media(hover:hover) {
+  body{
+    /*The transform goes below the "bottom" of the page otherwise*/
+    overflow:hidden;
+  }
+  .expandable>:not(h2) {
+    display: none;
+  }
+
+  .expandable.is-hovered>:not(h2) {
+    display: inherit;
+  }
+
+}
+
+.expandable>div>h3{
+  padding:5px;
+}
+.expandable>div{
+  align-items: center;
+  justify-content: center;
+}
+.expandable>div>span{
+  color: #dce0d9;
+  padding: 5px;
+  font-size: 11pt;
+}
+
+.no-height {
+  height: 0;
+  overflow: hidden;
+}
+
+.pop-up {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+.pop-up {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+@media only screen and (max-width: 768px) {
+  .pop-up {
+    /*Swap button direction for mobile*/
+    grid-template-rows: 1fr 3fr;
+    grid-template-columns: 1fr;
+  }
+}
+
+.pop-up>* {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.panel-more {
+  background-color: #daf7a6;
+  height: 100%;
+  color: #2a3d45;
+  padding: 20px;
+}
+
+.panel-more img{
+  max-width:25%;
+  padding:10px;
+}
+
+.panel-more span{
+  width:50%;
+}
+
+.panel-more a{
+  color: #e26d5c;
+}
