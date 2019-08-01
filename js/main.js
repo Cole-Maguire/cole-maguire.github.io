@@ -22,9 +22,10 @@ function meOpenClose() {
 }
 
 function createRepoEl(repo) {
-  let div = document.createElement("div");
-  div.innerHTML = `<h3><a href="${repo.html_url}">${repo.name}</a></h3>
-  <span><a href="${repo.html_url}">${repo.description}</a></span>`;
+  let div = document.createElement("a");
+  div.href = repo.html_url;
+  div.innerHTML = `<div><h3>${repo.name}</h3>
+  <span>${repo.description}</span></div>`;
   return div;
 }
 

@@ -140,19 +140,24 @@ main,
 
 }
 
-.expandable>div {
+.expandable div {
+  display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   background: #2e294ecc;
 }
 
-.expandable>div>h3 {
+.expandable>a {
+  width: 100%;
+}
+
+.expandable div h3 {
   padding: 5px;
   text-align: left;
 }
 
-.expandable>div>span {
+.expandable div span {
   color: #dce0d9;
   padding: 5px;
   font-size: 11pt;
