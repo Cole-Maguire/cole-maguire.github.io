@@ -122,13 +122,14 @@ main,
 
 .expandable>:not(h2) {
   display: inherit;
-} 
+}
 
 @media(hover:hover) {
-  body{
+  body {
     /*The transform goes below the "bottom" of the page otherwise*/
-    overflow:hidden;
+    overflow: hidden;
   }
+
   .expandable>:not(h2) {
     display: none;
   }
@@ -139,17 +140,23 @@ main,
 
 }
 
-.expandable>div>h3{
-  padding:5px;
-}
-.expandable>div{
+.expandable>div {
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  width: 100%;
+  background: #2e294ecc;
 }
-.expandable>div>span{
+
+.expandable>div>h3 {
+  padding: 5px;
+  text-align: left;
+}
+
+.expandable>div>span {
   color: #dce0d9;
   padding: 5px;
   font-size: 11pt;
+  text-align: right;
 }
 
 .no-height {
@@ -189,15 +196,15 @@ main,
   padding: 20px;
 }
 
-.panel-more img{
-  max-width:25%;
-  padding:10px;
+.panel-more img {
+  max-width: 25%;
+  padding: 10px;
 }
 
-.panel-more span{
-  width:50%;
+.panel-more span {
+  width: 50%;
 }
 
-.panel-more a{
+.panel-more a {
   color: #e26d5c;
 }
