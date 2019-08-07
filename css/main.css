@@ -120,9 +120,7 @@ main,
   }
 
   .panel.expandable a:hover {
-    transition: ease-in-out .25s;
     color: #e26d5c;
-    transform: scale(1.25);
   }
 
   body {
