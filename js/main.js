@@ -28,10 +28,15 @@ function meOpenClose() {
 }
 
 function createRepoEl(repo) {
+
+  const description = repo.description.length >= 75 ? repo.description.substring(0, 75) + '...' : repo.description
+  // This is technically open to all sorts of unicode truncation jank, but given that I'm the one writing the commits,
+  // We'll call it an acceptable edgecase
   let div = document.createElement("a");
+
   div.href = repo.html_url;
   div.innerHTML = `<div><h3>${repo.name}</h3>
-  <span>${repo.description}</span></div>`;
+  <span>${description}</span></div>`;
   return div;
 }
 
