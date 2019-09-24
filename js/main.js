@@ -22,11 +22,19 @@ function meOpenClose() {
 
 function createRepoEl(repo) {
   let div = document.createElement("a");
-  const description = repo.description.length >= 75 ? repo.description.substring(0, 75) + '...' : repo.description
+
   /* Truncate descriptions to prevent silly looking, unbalanced divs. 
   This is technically open to all sorts of unicode truncation jank, 
-  but given that I'm the one writing the descriptions,We'll call it an acceptable edgecase */
-
+  but given that I'm the one writing the descriptions, we'll call it an acceptable edgecase */
+  let description
+  if (repo.description === null) {
+    description = ""
+  } else if (repo.description.length >= 75) {
+    description = repo.description.substring(0, 75) + '...'
+  } else {
+    description = repo.description
+  }
+  
   div.href = repo.html_url;
   div.innerHTML = `<div><h3>${repo.name}</h3>
   <span>${description}</span></div>`;
