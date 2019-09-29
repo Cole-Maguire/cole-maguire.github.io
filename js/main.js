@@ -26,13 +26,9 @@ function createRepoEl(repo) {
   /* Truncate descriptions to prevent silly looking, unbalanced divs. 
   This is technically open to all sorts of unicode truncation jank, 
   but given that I'm the one writing the descriptions, we'll call it an acceptable edgecase */
-  let description
-  if (repo.description === null) {
-    description = ""
-  } else if (repo.description.length >= 75) {
+  let description = repo.description || ""
+  if (description.length >= 75) {
     description = repo.description.substring(0, 75) + '...'
-  } else {
-    description = repo.description
   }
   
   div.href = repo.html_url;
