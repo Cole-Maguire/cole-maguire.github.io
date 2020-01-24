@@ -74,6 +74,8 @@ div#main-panels {
   background-position: center;
   background-repeat: no-repeat;
   transition: ease-in-out .25s;
+
+  padding: 20px;
 }
 
 .panel.is-expanded {
@@ -138,24 +140,24 @@ main,
   display: inherit;
 }
 
-.expandable div {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  background: #2e294ecc;
+table {
+  border-collapse: collapse;
 }
 
-.expandable>a {
-  width: 100%;
-}
-
-.expandable div h3 {
-  padding: 5px;
+th,
+td {
   text-align: left;
+  padding: 9px;
+}
+td{
+  text-align: right;
 }
 
-.expandable div span {
+tr:not(:last-child) {
+  border-bottom: 1px solid #dce0d955;
+}
+
+.expandable td {
   color: #dce0d9;
   padding: 5px;
   font-size: 11pt;

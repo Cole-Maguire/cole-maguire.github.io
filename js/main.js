@@ -21,8 +21,6 @@ function meOpenClose() {
 }
 
 function createRepoEl(repo) {
-  let div = document.createElement("a");
-
   /* Truncate descriptions to prevent silly looking, unbalanced divs. 
   This is technically open to all sorts of unicode truncation jank, 
   but given that I'm the one writing the descriptions, we'll call it an acceptable edgecase */
@@ -30,15 +28,15 @@ function createRepoEl(repo) {
   if (description.length >= 75) {
     description = repo.description.substring(0, 75) + '...'
   }
-  
-  div.href = repo.html_url;
-  div.innerHTML = `<div><h3>${repo.name}</h3>
-  <span>${description}</span></div>`;
-  return div;
+
+  let row = document.createElement("tr");
+  row.innerHTML = `<th><a href="${repo.html_url}">${repo.name}</a></th>
+                  <td><a href="${repo.html_url}">${description}</a></td>`;
+  return row;
 }
 
 async function recentRepos() {
-  const githubPanel = document.querySelector(".github")
+  const githubPanel = document.querySelector(".github>table>tbody")
   const response = await fetch('https://api.github.com/users/cole-maguire/repos');
   const repos = await response.json();
 
