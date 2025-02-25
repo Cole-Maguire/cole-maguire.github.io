@@ -19,7 +19,7 @@ body {
   padding: 0;
   height: 100vh;
   display: grid;
-  grid-template-rows: 1fr 5fr;
+  grid-template-rows: 150px 5fr;
   color: white;
   font-family: 'Patua One', sans-serif;
 }
@@ -177,7 +177,7 @@ tr:not(:last-child) {
 .pop-up>* {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   margin: 0;
 }
 
@@ -189,7 +189,7 @@ tr:not(:last-child) {
 }
 
 .panel-more img {
-  width: 40%;
+  width: 30%;
   padding-right: 16px;
   padding-bottom: 16px;
 }
